@@ -15,7 +15,7 @@ public class Consumer1 {
         Connection connection = ConnectionUtil.getConnection();
         // 创建频道
         final Channel channel = connection.createChannel();
-        // 声明（创建）队列
+        // 声 明（创建）队列
         /**
          * 参数1：队列名称
          * 参数2：是否定义持久化队列
