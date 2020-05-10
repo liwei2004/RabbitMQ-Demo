@@ -24,7 +24,7 @@ public class Consumer2 {
          */
         channel.queueDeclare(Producer.DIRECT_QUEUE_UPDATE, true, false, false, null);
 
-        //队列绑定交换机
+        //队列绑定交换机，此处声明了routing key
         channel.queueBind(Producer.DIRECT_QUEUE_UPDATE, Producer.DIRECT_EXCHAGE, "update");
 
         //创建消费者；并设置消息处理

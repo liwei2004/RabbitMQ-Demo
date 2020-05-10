@@ -49,6 +49,10 @@ public class Consumer {
                 System.out.println("消息id为：" + envelope.getDeliveryTag());
                 //收到的消息
                 System.out.println("接收到的消息为：" + new String(body, "utf-8"));
+                /*路由key为：simple_queue
+                交换机为：
+                消息id为：1
+                接收到的消息为：你好；小兔子！*/
             }
         };
 

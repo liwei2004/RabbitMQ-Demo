@@ -27,6 +27,7 @@ public class Producer {
          * 参数1：交换机名称
          * 参数2：交换机类型，fanout、topic、direct、headers
          */
+        // 与发布与订阅模式的区别是交换机的类型为：Direct，还有队列绑定交换机的时候需要指定routing key
         channel.exchangeDeclare(DIRECT_EXCHAGE, BuiltinExchangeType.DIRECT);
 
         // 声明（创建）队列
@@ -40,7 +41,7 @@ public class Producer {
         channel.queueDeclare(DIRECT_QUEUE_INSERT, true, false, false, null);
         channel.queueDeclare(DIRECT_QUEUE_UPDATE, true, false, false, null);
 
-        //队列绑定交换机
+        //队列绑定交换机，绑定交换机的时候需要指定routing key（与发布订阅模式的区别）
         channel.queueBind(DIRECT_QUEUE_INSERT, DIRECT_EXCHAGE, "insert");
         channel.queueBind(DIRECT_QUEUE_UPDATE, DIRECT_EXCHAGE, "update");
 
